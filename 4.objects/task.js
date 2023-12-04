@@ -14,11 +14,11 @@ Student.prototype.addMarks = function(...marksToAdd) {
   }
 }
 Student.prototype.getAverage = function() {
-  if (this.marks.length === 0) {
+  if (this.marks.length > 0) {
+    let result = this.marks.reduce((acc, marks) => acc + marks, 0);
+    return result / this.marks.length;
+  } else  {
     return 0;
-  } else {
-  let result = this.marks.reduce((acc, marks) => acc + marks, 0);
-  return result / this.marks.length;
   }
 }
 Student.prototype.exclude = function(reason) {
