@@ -24,15 +24,13 @@ class PrintEditionItem {
 }
 
 class Magazine extends PrintEditionItem {
-  constructor (name, releaseDate, pagesCount, state = 100, type = null){
-    super(name, releaseDate, pagesCount);
+  super(name, releaseDate, pagesCount, state = 100, type = null) {
     this.type = "magazine";
   }
 }
 
 class Book extends PrintEditionItem {
-  constructor (name, releaseDate, pagesCount, state = 100, type = null){
-    super(name, releaseDate, pagesCount);
+  super(name, releaseDate, pagesCount, state = 100, type = null) {
     this.type = "book";
   }
 }
@@ -83,4 +81,3 @@ class Library {
     return book;
   }
 }
-
