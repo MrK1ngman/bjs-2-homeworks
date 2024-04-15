@@ -33,3 +33,19 @@ class Triangle {
         return area;
     }
 }
+
+function getTriangle(a, b, c){
+    try{
+        return new Triangle(a, b, c);
+    } catch(error){
+        let triangle = {};
+        function getPerimeter(){
+            return("Ошибка! Треугольник не существует");
+        }
+        function getArea() {
+            return("Ошибка! Треугольник не существует");
+        }
+        triangle.getArea = getArea;
+        triangle.getPerimeter = getPerimeter;
+    }
+}
