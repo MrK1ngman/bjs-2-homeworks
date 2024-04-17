@@ -45,5 +45,6 @@ function getTriangle(a, b, c){
         triangle.getArea = function getArea() {
             return("Ошибка! Треугольник не существует");
         }
+        return triangle;
     }
 }
