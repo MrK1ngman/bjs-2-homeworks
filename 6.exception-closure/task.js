@@ -39,12 +39,11 @@ function getTriangle(a, b, c){
         return new Triangle(a, b, c);
     } catch(error){
         let triangle = {};
-        triangle.perimeter = function() {
-            return "Ошибка! Треугольник не существует";
+        function err() {
+            return "Ошибка! Треугольник не существует";  
         }
-        triangle.area = function() {
-            return "Ошибка! Треугольник не существует";
-        }
+        triangle.perimeter = err;
+        triangle.area = err;
         return triangle;
     }
 }
