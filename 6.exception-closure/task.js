@@ -34,13 +34,13 @@ class Triangle {
     }
 }
 
-function getTriangle(a, b, c){
-    try{
-        return new Triangle(a, b, c);
-    } catch(error){
-        return {
-                    getArea: function () { return "Ошибка! Треугольник не существует" },
-                    getPerimeter: function () { return "Ошибка! Треугольник не существует" }
-                }
-    }
-}
+function getTriangle (a, b, c) {
+     try {
+         return new Triangle(a, b, c);
+     } catch (error) {
+         return {
+             getArea: function () { return "Ошибка! Треугольник не существует" },
+             getPerimeter: function () { return "Ошибка! Треугольник не существует" }
+         }
+     }
+ }
