@@ -40,10 +40,10 @@ function getTriangle(a, b, c){
     } catch(error){
         let triangle = {};
         const err = "Ошибка! Треугольник не существует";
-        triangle.perimeter = function getPerimeter(){
+        triangle.perimeter() {
             return err;
         }
-        triangle.area = function getArea() {
+        triangle.area() {
             return err;
         }
         return triangle;
