@@ -42,8 +42,8 @@ function getTriangle(a, b, c){
         function err() {
             return "Ошибка! Треугольник не существует";  
         }
-        triangle.perimeter = err;
-        triangle.area = err;
+        triangle.perimeter = const err;
+        triangle.area = const err;
         return triangle;
     }
 }
