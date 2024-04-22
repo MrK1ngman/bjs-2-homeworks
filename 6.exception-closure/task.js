@@ -38,13 +38,15 @@ function getTriangle(a, b, c){
     try{
         return new Triangle(a, b, c);
     } catch(error){
+        const err = "Ошибка! Треугольник не существует";
         const triangle = {
             perimeter() {
-                return "Ошибка! Треугольник не существует";
+                return err;
             },
             area() {
-                return "Ошибка! Треугольник не существует";
+                return err;
             }
         };
+        return triangle;
     }
 }
