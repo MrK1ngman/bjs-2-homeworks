@@ -46,6 +46,5 @@ function getTriangle(a, b, c){
                 return "Ошибка! Треугольник не существует";
             }
         };
-        return triangle;
     }
 }
