@@ -20,11 +20,11 @@ class AlarmClock {
     removeClock(time) {
         this.alarmCollection = this.alarmCollection.filter((alarms) => alarms !== time);
     }
-    getCurrentFormattedTime() {
-        let currentTime = new Date();
-        let hour = currentTime.getHours();
-        let minute = currentTime.getMinutes();
-        return `${hour}:${minute}`;
+ getCurrentFormattedTime() {
+        currentTime = new Date();
+        hours = currentTime.getHours();
+        minutes = currentTime.getMinutes();
+        return `${hours}:${minutes}`;
     }
     start() {
         if(this.intervalId !== undefined) {
