@@ -1,10 +1,10 @@
 class AlarmClock {
     constructor(alarmCollection, intervalId) {
         this.alarmCollection = [];
-        this.intervalId;
+        this.intervalId = null;
     }
     addClock(alarmTime, func) {
-        if (alarmTime || func === undefined) {
+        if ((alarmTime === undefined) || (func === undefined)) {
             throw new Error('Отсутствуют обязательные аргументы')
         }
         if (this.alarmCollection.includes(alarmTime)) {
