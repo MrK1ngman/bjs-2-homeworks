@@ -10,12 +10,11 @@ class AlarmClock {
         if (this.alarmCollection.some(alarmTime)) {
             console.warn('Уже присутствует звонок на это же время')
         } else {
-        alarm = {
+        this.alarmCollection.push({
             callback: func,
             time: alarmTime,
             canCall: true
-        };
-        this.alarmCollection.push(alarm);
+        });
         }
     }
     removeClock(time) {
@@ -23,9 +22,9 @@ class AlarmClock {
     }
     getCurrentFormattedTime() {
         let currentTime = new Date();
-        hours = currentTime.getHours();
-        minutes = currentTime.getMinutes();
-        return '${hours}:${minutes}';
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        return `${hours}:${minutes}`;
     }
     start() {
         if(this.intervalId !== undefined) {
