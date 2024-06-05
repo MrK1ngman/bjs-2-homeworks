@@ -22,9 +22,9 @@ class AlarmClock {
     }
     getCurrentFormattedTime() {
         let currentTime = new Date();
-        let hours = currentTime.getHours();
-        let minutes = currentTime.getMinutes();
-        return `${hours}:${minutes}`;
+        let hour = currentTime.getHours();
+        let minute = currentTime.getMinutes();
+        return `${hour}:${minute}`;
     }
     start() {
         if(this.intervalId !== undefined) {
