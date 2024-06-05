@@ -7,15 +7,14 @@ class AlarmClock {
         if ((alarmTime === undefined) || (func === undefined)) {
             throw new Error('Отсутствуют обязательные аргументы')
         }
-        if (this.alarmCollection.includes(alarmTime)) {
+        if (this.alarmCollection.some(alarmTime)) {
             console.warn('Уже присутствует звонок на это же время')
         } else {
-        let alarm = {
+        this.alarmCollection.push({
             callback: func,
             time: alarmTime,
             canCall: true
-        };
-        this.alarmCollection.push(alarm);
+        });
         }
     }
     removeClock(time) {
