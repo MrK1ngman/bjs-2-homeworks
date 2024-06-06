@@ -5,16 +5,12 @@ class AlarmClock {
     }
     addClock(time, callback) {
         if ((time === null) || (callback === null)) {
-            throw new Error('Отсутствуют обязательные аргументы')
-        } else if (this.alarmCollection.some(time)) {
-            console.warn('Уже присутствует звонок на это же время')
-        } else {
-            this.alarmCollection.push({time, callback, canCall: true});
+            throw new Error('Отсутствуют обязательные аргументы');
+        } else if ( this.alarmCollection.find(i => i.time === time) ) {
+            console.warn('Уже присутствует звонок на это же время');
         }
-    }
-    removeClock(time) {
-        this.alarmCollection = this.alarmCollection.filter(alarms => alarms.time !== time);
-    }
+        this.alarmCollection.push({time, callback, canCall: true});
+  }
     getCurrentFormattedTime() {
         let currentTime = new Date();
         let currentFormattedTime = currentTime.toLocaleTimeString("ru-Ru", { hour: '2-digit', minute: '2-digit'});
