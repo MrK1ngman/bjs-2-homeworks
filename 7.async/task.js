@@ -3,21 +3,14 @@ class AlarmClock {
         this.alarmCollection = [];
         this.intervalId = null;
     }
-    addClock(alarmTime, func) {
-        if ((alarmTime === null) || (func === null)) {
+    addClock(time, callback) {
+        if ((time === null) || (callback === null)) {
             throw new Error('Отсутствуют обязательные аргументы')
         }
         if (this.alarmCollection.some(alarmTime)) {
             console.warn('Уже присутствует звонок на это же время')
         } else {
-            function alarm(func, alarmTime) {
-                return {
-                callback: func,
-                time: alarmTime,
-                canCall: true
-                };
-            };
-            this.alarmCollection.push(alarm);
+            this.alarmCollection.push({callback, time, canCall: true});
         }
     }
     removeClock(time) {
