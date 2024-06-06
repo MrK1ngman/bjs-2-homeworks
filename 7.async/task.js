@@ -4,17 +4,20 @@ class AlarmClock {
         this.intervalId = null;
     }
     addClock(alarmTime, func) {
-        if ((alarmTime === undefined) || (func === undefined)) {
+        if ((alarmTime === null) || (func === null)) {
             throw new Error('Отсутствуют обязательные аргументы')
         }
         if (this.alarmCollection.some(alarmTime)) {
             console.warn('Уже присутствует звонок на это же время')
         } else {
-            this.alarmCollection.push({
+            function alarm(func, alarmTime) {
+                return {
                 callback: func,
                 time: alarmTime,
                 canCall: true
-            });
+                };
+            };
+            this.alarmCollection.push(alarm);
         }
     }
     removeClock(time) {
