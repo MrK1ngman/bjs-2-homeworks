@@ -6,10 +6,12 @@ class AlarmClock {
     addClock(time, callback) {
         if ((time === null) || (callback === null)) {
             throw new Error('Отсутствуют обязательные аргументы');
-        } else if (this.alarmCollection.some(this.alarmCollection)) {
-            console.warn('Уже присутствует звонок на это же время');
         }
+        if (this.alarmCollection.some(this.alarmCollection)) {
+            console.warn('Уже присутствует звонок на это же время');
+        } else {
         this.alarmCollection.push({time, callback, canCall: true});
+        }
     }
      removeClock(time) {
         this.alarmCollection = this.alarmCollection.filter(i => i.time !== time)
