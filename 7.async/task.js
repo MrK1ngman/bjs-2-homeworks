@@ -6,8 +6,7 @@ class AlarmClock {
     addClock(time, callback) {
         if ((time === null) || (callback === null)) {
             throw new Error('Отсутствуют обязательные аргументы')
-        }
-        if (this.alarmCollection.some(time)) {
+        } else if (this.alarmCollection.some(time)) {
             console.warn('Уже присутствует звонок на это же время')
         } else {
             this.alarmCollection.push({callback, time, canCall: true});
