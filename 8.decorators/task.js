@@ -9,12 +9,12 @@ function cachingDecoratorNew(func) {
             return 'Из кэша:' + objectInCache;
         }
         let result = func(...args);
-        cash.push(hash);
+        cache.push(hash);
         if (cache.length > 5) {
             cache.shift();
         }
         console.log("Вычисляем: " + result);
-        return "Вычисляем: " + result;  
+        return "Вычисляем: " + result;
     }
     return wrapper;
 }
