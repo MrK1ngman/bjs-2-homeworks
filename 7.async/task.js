@@ -15,8 +15,9 @@ class AlarmClock {
         this.alarmCollection = this.alarmCollection.filter(i => i.time !== time)
     }
     getCurrentFormattedTime() {
-        let currentTime = new Date.toLocaleTimeString("ru-Ru", { hour: '2-digit', minute: '2-digit'});
-        return currentTime;
+        let currentTime = new Date();
+        let currentFormattedTime = currentTime.toLocaleTimeString("ru-Ru", { hour: '2-digit', minute: '2-digit'});
+        return currentFormattedTime;
     }
     start() {
         if(this.intervalId !== null) {
