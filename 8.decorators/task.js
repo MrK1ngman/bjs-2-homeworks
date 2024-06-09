@@ -14,7 +14,7 @@ function cachingDecoratorNew(func) {
             cache.shift();
         }
         console.log("Вычисляем: " + result);
-        return "Вычисляем: " + result;
+        return "Вычисляем: " + result;  
     }
     return wrapper;
 }
