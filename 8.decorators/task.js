@@ -5,8 +5,8 @@ function cachingDecoratorNew(func) {
         const hash = md5(String(...args));
         let objectInCache = cache.find((item) => item.hash == hash)
         if (objectInCache) {
-            console.log('Из кэша:' + cache.value);
-            return 'Из кэша:' + cache.value;
+            console.log('Из кэша:' + objectInCache.value);
+            return 'Из кэша:' + objectInCache.value;
         }
         let result = func(...args);
         cache.push({hash: hash, value: result});
