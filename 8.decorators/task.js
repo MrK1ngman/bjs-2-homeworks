@@ -16,6 +16,7 @@ function cachingDecoratorNew(func) {
         console.log("Вычисляем: " + result);
         return "Вычисляем: " + result;
     }
+    return wrapper;
 }
 
 //Задача № 2
