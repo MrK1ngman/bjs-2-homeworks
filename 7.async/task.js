@@ -34,13 +34,13 @@ class AlarmClock {
         }
     }
     stop() {
-        clearInterval(this.intervalId);
-        this.intervalId = null;
+    clearInterval(this.intervalId);
+    this.intervalId = null;
     }
     resetAllCalls() {
-        this.alarmCollection.forEach(i => i.canCall = true)
+        this.alarmCollection.forEach(i => i.canCall = true);
     }
-    cleanAlarms() {
+    clearAlarms() {
         this.stop();
         this.alarmCollection = [];
     }
