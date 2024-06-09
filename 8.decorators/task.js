@@ -1,22 +1,21 @@
 //Задача № 1
 function cachingDecoratorNew(func) {
-    let cash = [];
+    let cache = [];
     function wrapper(...args) {
         const hash = md5(...args);
-        let objectInCash = cash.find((item) => item = hash)
-        if (!objectInCash) {
-            console.log('Из кэша:' + objectInCash);
-            return 'Из кэша:' + objectInCash;
+        let objectInCache = cache.find((item) => item = hash)
+        if (!objectInCache) {
+            console.log('Из кэша:' + objectInCache);
+            return 'Из кэша:' + objectInCache;
         }
         let result = func(...args);
         cash.push(hash);
-        if (cash.length > 5) {
-            cash.shift();
+        if (cache.length > 5) {
+            cache.shift();
         }
         console.log("Вычисляем: " + result);
         return "Вычисляем: " + result;
     }
-    return wrapper;
 }
 
 //Задача № 2
